@@ -12,4 +12,5 @@ get('/results') do
   side3 = params.fetch('side3').to_i
   triangle = Triangle.new(side1, side2, side3)
   @results = triangle.type()
+  erb(:results)
 end
