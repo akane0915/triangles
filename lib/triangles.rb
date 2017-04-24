@@ -12,10 +12,16 @@ class Triangle
 
   define_method(:type) do
     results = ''
-    if @side1.==(@side2) && @side1.==(@side3)
-      results = 'Equilateral'
-    elsif @side1 == @side2 || @side2 == @side3 || @side1 == @side3
-      results = 'Isosceles'
+    if check?()
+      if @side1.==(@side2) && @side1.==(@side3)
+        results = 'Equilateral'
+      elsif @side1 == @side2 || @side2 == @side3 || @side1 == @side3
+        results = 'Isosceles'
+      else
+        results = 'Scalene'
+      end
+    else
+      results = 'This is not a triangle'
     end
     results
   end
